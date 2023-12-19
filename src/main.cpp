@@ -121,9 +121,18 @@ uint8_t OVF_Counter_Compare = 0;          //Compare OVF_Counter to this value (B
 TM1637Display Display1(CLK1, DIO1);
 TM1637Display Display2(CLK2, DIO2);
 
+ void Pot_Switch_State_Check();
+ void Button_Click();
+ 
+void Pwm_Disable();
+void Pwm_Config();
+void Display(uint8_t PWM_Running, bool Blink,uint8_t Desired_Freq);
+void Wait_A_Bit(uint32_t Executions_To_Wait);
+
 void setup()
 {lcd.init();                      // initialize the lcd 
   lcd.init();
+ 
   // Print a message to the LCD.
   lcd.backlight();
   
